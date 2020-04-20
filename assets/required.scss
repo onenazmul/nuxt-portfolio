@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400&display=swap');
+
+$bodyFont: 'Roboto', sans-serif;
+@font-face {
+  font-family: 'Futura';
+  src: url('fonts/FuturaBT-Medium.eot');
+  src: url('fonts/FuturaBT-Medium.eot?#iefix') format('embedded-opentype'),
+    url('fonts/FuturaBT-Medium.woff2') format('woff2'),
+    url('fonts/FuturaBT-Medium.woff') format('woff'),
+    url('fonts/FuturaBT-Medium.ttf') format('truetype'),
+    url('fonts/FuturaBT-Medium.svg#FuturaBT-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura';
+  src: url('fonts/FuturaBT-ExtraBlack.eot');
+  src: url('fonts/FuturaBT-ExtraBlack.eot?#iefix') format('embedded-opentype'),
+    url('fonts/FuturaBT-ExtraBlack.woff2') format('woff2'),
+    url('fonts/FuturaBT-ExtraBlack.woff') format('woff'),
+    url('fonts/FuturaBT-ExtraBlack.ttf') format('truetype'),
+    url('fonts/FuturaBT-ExtraBlack.svg#FuturaBT-ExtraBlack') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura';
+  src: url('fonts/FuturaBT-Light.eot');
+  src: url('fonts/FuturaBT-Light.eot?#iefix') format('embedded-opentype'),
+    url('fonts/FuturaBT-Light.woff2') format('woff2'),
+    url('fonts/FuturaBT-Light.woff') format('woff'),
+    url('fonts/FuturaBT-Light.ttf') format('truetype'),
+    url('fonts/FuturaBT-Light.svg#FuturaBT-Light') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+$headFont: 'Futura', sans-serif;
+html {
+  font-family: $bodyFont, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  body {
+    font-family: $bodyFont;
+    font-weight: 300;
+    a,
+    a:hover,
+    a:focus {
+      text-decoration: none;
+    }
+    .wrapper {
+      overflow: hidden;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+}
+.navbar-nav {
+  font-weight: 500;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-nav {
+  font-family: $headFont;
+}
+.navbar-brand {
+  font-family: $headFont;
+  font-weight: 900;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+// colors
+$primary: #1d2671;
+
+$darkPrimary: #111961;
+$textOverPrimary: #fff;
+$greyBg: #efefef;
+$red: red;
+/* header*/
+header.header {
+  background-color: $primary;
+  a {
+    color: $textOverPrimary;
+  }
+  .navbar {
+    .navbar-nav {
+      color: $textOverPrimary;
+    }
+  }
+  .navbar-light {
+    .navbar-nav {
+      .nav-link {
+        color: $textOverPrimary;
+        transition: 0.3s;
+        &:hover,
+        &:focus {
+          color: $red;
+        }
+        .active {
+          color: $red;
+        }
+      }
+      .navbar-brand {
+        &:focus,
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+    .navbar-toggler-icon {
+      background-image: none;
+      position: relative;
+      &:before,
+      &:after {
+        opacity: 0.82;
+        content: '';
+        background: #fff;
+        height: 6px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+      }
+      &:before {
+        top: 5px;
+      }
+      &:after {
+        bottom: 5px;
+      }
+    }
+  }
+}
+
+ul > li > ul.dropdown {
+  margin: 0;
+  list-style: none;
+  background-color: #1d2b9e;
+  padding: 20px 15px;
+  border-bottom: 2px solid $red;
+  position: absolute;
+  top: 135%;
+  width: 100%;
+  min-width: 150px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+.navbar-nav > li {
+  position: relative;
+}
+
+.navbar-nav > li:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  top: 100%;
+  z-index: 2;
+}
+.dropdown a:hover,
+.dropdown a:focus {
+  color: $red;
+  border-left: 1px solid;
+  padding-left: 10px;
+}
+.dropdown li {
+  margin: 4px 0;
+}
+.dropdown a {
+  transition: 0.3s;
+  line-height: 1.8;
+  display: block;
+}
+
+.inner-content {
+  padding: 50px 0 65px;
+}
+
+@media only screen and (min-width: 1250px) and (max-width: 1599px) {
+  .container,
+  .container-fluid {
+    max-width: 1200px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .container,
+  .container-fluid {
+    max-width: 1500px;
+  }
+}
+.navbar {
+  padding: 10px 0;
+}
+.top-part {
+  line-height: 2.1rem;
+  .container-fluid {
+    position: relative;
+  }
+  .container-fluid:after {
+    content: '';
+    width: 98%;
+    left: 1%;
+    bottom: 0;
+    height: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+  }
+}
+
+footer {
+  .footer-top {
+    background-color: $primary;
+    padding: 45px 0 30px;
+    color: $textOverPrimary;
+  }
+  a {
+    color: $textOverPrimary;
+    &:hover,
+    &:focus {
+      color: $textOverPrimary;
+    }
+  }
+  .footer-bottom {
+    background-color: $darkPrimary;
+    color: $textOverPrimary;
+    margin-top: -1px;
+  }
+}
+
+.widget {
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      line-height: 2rem;
+      a {
+        display: block;
+        &:hover {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .w-title {
+    position: relative;
+    margin-bottom: 20px;
+    &:after {
+      content: '';
+      background: $greyBg;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 30%;
+      transition: 0.3s;
+    }
+    // &:
+  }
+  &:hover {
+    .w-title {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.title-area {
+  font-family: $headFont;
+  margin-bottom: 30px;
+  h2 {
+    span {
+      display: block;
+    }
+  }
+}
+.common-area {
+  padding: 75px;
+  position: relative;
+  overflow: hidden;
+}
+.single-box {
+  margin-top: 25px;
+  img {
+    max-width: 140px;
+  }
+}
+.services:after {
+  position: absolute;
+  left: -85px;
+  bottom: -85px;
+  border-radius: 50%;
+  background-color: #f0f7ff;
+  height: 550px;
+  width: 550px;
+  content: '';
+  z-index: -1;
+}
+.serv-2:after {
+  position: absolute;
+  right: -85px;
+  top: -85px;
+  border-radius: 50%;
+  background-color: #f0f7ff;
+  height: 550px;
+  width: 550px;
+  content: '';
+  z-index: -1;
+}
+
+.grey-bg {
+  background-color: $greyBg;
+}
